@@ -1,0 +1,173 @@
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+public class RestoranMenusu {
+
+    public static Map<String, List<Kategori>> getSekmeler() {
+        Map<String, List<Kategori>> sekmeler = new LinkedHashMap<>();
+
+        sekmeler.put("Çorba & Ev Yemekleri", List.of(
+                new Kategori("Çorbalar",
+                        new Urun("Mercimek Çorbası", 110),
+                        new Urun("Ezogelin Çorbası", 110),
+                        new Urun("Yayla Çorbası", 110),
+                        new Urun("Domates Çorbası", 110),
+                        new Urun("Tavuk Suyu Çorba", 130),
+                        new Urun("İşkembe Çorbası", 180)),
+                new Kategori("Ev Yemekleri",
+                        new Urun("Et Kavurma", 550),
+                        new Urun("Tas Kebabı", 420),
+                        new Urun("Orman Kebabı", 400),
+                        new Urun("Hünkar Beğendi", 480),
+                        new Urun("İzmir Köfte", 320),
+                        new Urun("Karnıyarık", 300),
+                        new Urun("Fırın Tavuk", 300),
+                        new Urun("Etli Türlü", 280),
+                        new Urun("Etli Nohut", 240),
+                        new Urun("Kuru Fasulye", 220)),
+                new Kategori("Pilavlar & Garnitürler",
+                        new Urun("Tereyağlı Pilav", 90),
+                        new Urun("Şehriyeli Pilav", 90),
+                        new Urun("Bulgur Pilavı", 90),
+                        new Urun("Patates Püresi", 100),
+                        new Urun("Fırın Patates", 110),
+                        new Urun("Yoğurt (Kase)", 60))));
+
+        sekmeler.put("Salata & Meze", List.of(
+                new Kategori("Salatalar",
+                        new Urun("Çoban Salata", 140),
+                        new Urun("Gavurdağı Salata", 170),
+                        new Urun("Mevsim Salata", 130),
+                        new Urun("Roka Salatası", 150),
+                        new Urun("Akdeniz Salata", 180),
+                        new Urun("Sezar Salata", 220),
+                        new Urun("Ton Balıklı Salata", 240)),
+                new Kategori("Mezeler",
+                        new Urun("Acılı Ezme", 110),
+                        new Urun("Haydari", 110),
+                        new Urun("Patlıcan Salatası", 130),
+                        new Urun("Humus", 130),
+                        new Urun("Babagannuş", 130),
+                        new Urun("Şakşuka", 130),
+                        new Urun("Atom", 120),
+                        new Urun("Fava", 120),
+                        new Urun("Kısır", 120),
+                        new Urun("Cacık", 90)),
+                new Kategori("Ara Sıcaklar",
+                        new Urun("Sigara Böreği", 150),
+                        new Urun("Paçanga Böreği", 180),
+                        new Urun("İçli Köfte (2 adet)", 190),
+                        new Urun("Patates Kızartması", 110))));
+
+        sekmeler.put("Izgara & Kebap", List.of(
+                new Kategori("Kebaplar",
+                        new Urun("Adana Kebap", 420),
+                        new Urun("Urfa Kebap", 420),
+                        new Urun("Beyti Sarma", 520),
+                        new Urun("İskender", 480),
+                        new Urun("Ali Nazik", 500),
+                        new Urun("Patlıcan Kebabı", 480)),
+                new Kategori("Izgara Etler",
+                        new Urun("Kuşbaşı", 480),
+                        new Urun("Et Şiş", 520),
+                        new Urun("Izgara Köfte", 360),
+                        new Urun("Kuzu Pirzola", 650),
+                        new Urun("Dana Antrikot", 720),
+                        new Urun("Bonfile", 850),
+                        new Urun("Karışık Izgara", 1200)),
+                new Kategori("Tavuk",
+                        new Urun("Tavuk Şiş", 340),
+                        new Urun("Tavuk Kanat", 320),
+                        new Urun("Tavuk Pirzola", 360),
+                        new Urun("Tavuk Beyti", 380))));
+
+        sekmeler.put("Döner & Pide", List.of(
+                new Kategori("Döner",
+                        new Urun("Et Döner Porsiyon", 380),
+                        new Urun("Tavuk Döner Porsiyon", 260),
+                        new Urun("Pilav Üstü Döner", 400),
+                        new Urun("Pilav Üstü Tavuk", 280),
+                        new Urun("Et Döner Dürüm", 300),
+                        new Urun("Tavuk Döner Dürüm", 190),
+                        new Urun("Yarım Ekmek Döner", 280),
+                        new Urun("Tombik Tavuk Döner", 200)),
+                new Kategori("Pide & Lahmacun",
+                        new Urun("Lahmacun", 120),
+                        new Urun("Kaşarlı Pide", 240),
+                        new Urun("Kıymalı Pide", 260),
+                        new Urun("Sucuklu Kaşarlı Pide", 290),
+                        new Urun("Kuşbaşılı Pide", 320),
+                        new Urun("Karışık Pide", 330),
+                        new Urun("Kavurmalı Pide", 360))));
+
+        sekmeler.put("Pizza & Makarna", List.of(
+                new Kategori("Pizzalar",
+                        new Urun("Margherita", 330),
+                        new Urun("Mantarlı Pizza", 350),
+                        new Urun("Vejetaryen Pizza", 350),
+                        new Urun("Sucuklu Pizza", 370),
+                        new Urun("Pepperoni Pizza", 380),
+                        new Urun("Dört Peynirli Pizza", 390),
+                        new Urun("Karışık Pizza", 400),
+                        new Urun("Ton Balıklı Pizza", 400),
+                        new Urun("Kavurmalı Pizza", 450)),
+                new Kategori("Makarnalar",
+                        new Urun("Penne Arrabbiata", 280),
+                        new Urun("Penne Pesto", 300),
+                        new Urun("Fettuccine Alfredo", 310),
+                        new Urun("Mantarlı Fettuccine", 310),
+                        new Urun("Spagetti Bolonez", 320),
+                        new Urun("Lazanya", 340))));
+
+        sekmeler.put("Tatlılar", List.of(
+                new Kategori("Şerbetli Tatlılar",
+                        new Urun("Künefe", 220),
+                        new Urun("Baklava (4 dilim)", 260),
+                        new Urun("Fıstıklı Şöbiyet", 270),
+                        new Urun("Tel Kadayıf", 200)),
+                new Kategori("Sütlü Tatlılar",
+                        new Urun("Fırın Sütlaç", 140),
+                        new Urun("Kazandibi", 150),
+                        new Urun("Keşkül", 140),
+                        new Urun("Supangle", 150),
+                        new Urun("Trileçe", 150)),
+                new Kategori("Pastalar & Dondurma",
+                        new Urun("Cheesecake", 190),
+                        new Urun("San Sebastian", 230),
+                        new Urun("Tiramisu", 210),
+                        new Urun("Profiterol", 170),
+                        new Urun("Dondurma (3 top)", 120))));
+
+        sekmeler.put("İçecekler", List.of(
+                new Kategori("Soğuk İçecekler",
+                        new Urun("Kola", 70).zeroSecenekli(),
+                        new Urun("Fanta", 70).zeroSecenekli(),
+                        new Urun("Sprite", 70).zeroSecenekli(),
+                        new Urun("Ice Tea", 70).aromali("Şeftali", "Limon", "Karpuz&Çilek"),
+                        new Urun("Limonata", 80),
+                        new Urun("Ayran", 50),
+                        new Urun("Şalgam", 60),
+                        new Urun("Karışık Meyve Suyu", 70),
+                        new Urun("Taze Portakal Suyu", 120),
+                        new Urun("Maden Suyu", 40),
+                        new Urun("Su", 25)),
+                new Kategori("Sıcak İçecekler",
+                        new Urun("Çay", 30),
+                        new Urun("Bitki Çayı", 70),
+                        new Urun("Türk Kahvesi", 90),
+                        new Urun("Espresso", 90),
+                        new Urun("Americano", 110),
+                        new Urun("Latte", 130),
+                        new Urun("Cappuccino", 130),
+                        new Urun("Mocha", 140),
+                        new Urun("Sıcak Çikolata", 130),
+                        new Urun("Salep", 120)),
+                new Kategori("Soğuk Kahveler",
+                        new Urun("Iced Americano", 120),
+                        new Urun("Iced Latte", 140),
+                        new Urun("Iced Mocha", 150))));
+
+        return sekmeler;
+    }
+}
