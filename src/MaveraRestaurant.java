@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ public class MaveraRestaurant extends JFrame {
     private static final Color GECE_MAVISI = new Color(0x1B2A49);
     private static final Color ALTIN = new Color(0xE0B04B);
     private static final Color ONAY_YESILI = new Color(0x2E7D32);
+    private static final int[] IKON_BOYUTLARI = {16, 20, 24, 32, 40, 48, 64};
 
     private final Sepet sepet = new Sepet();
     private final List<UrunSatiri> satirlar = new ArrayList<>();
@@ -18,6 +20,7 @@ public class MaveraRestaurant extends JFrame {
 
     public MaveraRestaurant() {
         setTitle("Mavera Restoran");
+        ikonuAyarla();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 680);
         setMinimumSize(new Dimension(640, 480));
@@ -29,14 +32,24 @@ public class MaveraRestaurant extends JFrame {
             sekmeler.addTab(sekme.getKey(), menuSekmesi(sekme.getValue()));
         }
         sekmeler.addTab("Hesap", new HesapPaneli(sepet, satirlar));
-
         sepet.degisinceHaberVer(this::sepetYazisiniGuncelle);
-
         add(baslikPaneli(), BorderLayout.NORTH);
         add(sekmeler, BorderLayout.CENTER);
         add(altCubuk(), BorderLayout.SOUTH);
-
         sepetYazisiniGuncelle();
+    }
+
+    private void ikonuAyarla() {
+        URL ikonAdresi = MaveraRestaurant.class.getResource("/resimler/ikon.png");
+        if (ikonAdresi == null) {
+            return;
+        }
+        Image ikon = new ImageIcon(ikonAdresi).getImage();
+        List<Image> ikonlar = new ArrayList<>();
+        for (int boyut : IKON_BOYUTLARI) {
+            ikonlar.add(ikon.getScaledInstance(boyut, boyut, Image.SCALE_SMOOTH));
+        }
+        setIconImages(ikonlar);
     }
 
     private JPanel baslikPaneli() {
